@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import House from '../House/House';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import './Dashboard.css'
 
 class Dashboard extends Component {
     constructor() {
@@ -13,12 +14,19 @@ class Dashboard extends Component {
         this.getHouseList = this.getHouseList.bind(this);
         this.deleteProperty = this.deleteProperty.bind(this);
     }
+    
+    componentDidMount() {
+        this.getHouseList()
+    }
 
     getHouseList() {
+        console.log(this.getHouseList)
         let promise = axios.get(`/api/houselist`);
         promise.then((res) => {
+            console.log(res.data)
             this.setState({
                 houseList: res.data
+                
             })
         })
     }
@@ -31,13 +39,12 @@ class Dashboard extends Component {
         })
     }
     
-    componentDidMount() {
-        this.getHouseList()
-    }
 
     render() {
         return (
-            <div>
+            <div id="dash_subheader">
+            <h2 id="dash_heading">Dashboard</h2>
+            <button id="dash_button"><Link to='/wizard/step1' >Add New Property</Link></button>
             {this.state.houseList.map((val) => {
                     return (
                         <House
@@ -50,7 +57,6 @@ class Dashboard extends Component {
                             zipcode={val.zip}
                             deleteProperty={this.deleteProperty} />)
                 })}
-                <button><Link to='/wizard/step1'>Add New Property</Link></button>
             </div>
         )
     }

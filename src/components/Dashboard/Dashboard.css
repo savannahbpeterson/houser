@@ -1,0 +1,20 @@
+#dash_subheader{
+    display: flex;
+    justify-content: space-between
+}
+#dash_heading{
+    font-size: 40px;
+    color: #3b5249;
+    margin: 20px;
+}
+#dash_button{
+    margin: 20px;
+    height: 50px;
+    width: 130px;
+    background-color: #8aea92;
+    border: none;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 700;
+}

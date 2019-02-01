@@ -14,14 +14,24 @@ class StepOne extends Component {
         const {updateName, updateAddress, updateCity, updatePropertyState, updateZipcode} = this.props;
         return (
             <div>
-                Wizard
-                <input placeholder='Property Name' onChange={(e) => updateName(e.target.value)}></input>
-                <input placeholder='Address' onChange={(e) => updateAddress(e.target.value)}></input>
-                <input placeholder='City' onChange={(e) => updateCity(e.target.value)}></input>
-                <input placeholder='State' onChange={(e) => updatePropertyState(e.target.value)}></input>
-                <input placeholder='Zipcode' onChange={(e) => updateZipcode(e.target.value)}></input>
-                <button><Link to='/wizard/step2'>Next Step</Link></button>
+                <p>Add New Listing</p>
                 <button><Link to='/'>Cancel</Link></button>
+                <br></br>
+                Property Name
+                <br></br>
+                <input onChange={(e) => updateName(e.target.value)}></input>
+                <br></br>
+                Address
+                <br></br> 
+                <input onChange={(e) => updateAddress(e.target.value)}></input>
+                <br></br>
+                City
+                <input  onChange={(e) => updateCity(e.target.value)}></input>
+                State 
+                <input onChange={(e) => updatePropertyState(e.target.value)}></input>
+                Zipcode                
+                <input onChange={(e) => updateZipcode(e.target.value)}></input>
+                <button><Link to='/wizard/step2'>Next Step</Link></button>
                 </div> 
         )
     }
